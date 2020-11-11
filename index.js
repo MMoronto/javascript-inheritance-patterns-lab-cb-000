@@ -54,10 +54,13 @@ Polygon.prototype.numberOfSides = function() {
   return(this.sides.length);
 }
 
-function Triangle
-  0eTwoLength), new Side(sideThreeLength)])
+function Triangle(sideOneLength, sideTwoLength, sideThreeLength) {
+  Polygon.call(this, [new Side(sideOneLength), new Side(sideTwoLength), new Side(sideThreeLength)])
 }
+
  Triangle.prototype = Object.create(Polygon.prototype);
  Triangle.prototype.constructor = Triangle;
  
- function Quadrilateral
+ function Quadrilateral(sideOneLength, sideTwoLength, sideThreeLength, sideFourLength) {
+  Polygon.call(this, [new Side(sideOneLength), new Side(sideTwoLength), new Side(sideThreeLength), new Side(sideFourlength)]);
+}
