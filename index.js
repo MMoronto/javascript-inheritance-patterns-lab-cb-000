@@ -64,3 +64,10 @@ function Triangle(sideOneLength, sideTwoLength, sideThreeLength) {
  function Quadrilateral(sideOneLength, sideTwoLength, sideThreeLength, sideFourLength) {
   Polygon.call(this, [new Side(sideOneLength), new Side(sideTwoLength), new Side(sideThreeLength), new Side(sideFourlength)]);
 }
+
+ Triangle.prototype = Object.create(Polygon.prototype);
+ Triangle.prototype.constructor = Triangle;
+
+
+
+
