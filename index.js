@@ -5,7 +5,7 @@ function Point(x, y) {
 
 Point.prototype.toString = function() {
   return("(" + this.x + "," + this.y + ")");
-} 
+}
 
 function Side(length) {
   this.length = length;
@@ -13,7 +13,7 @@ function Side(length) {
 
 function Shape() {}
 
-Shape.prototype.addToPlane = function(x,y) {
+Shape.prototype.addToPlane = function(x, y) {
   this.position = new Point(x,y);
 }
 Shape.prototype.move = function(x,y) {
@@ -42,7 +42,7 @@ function Polygon(sides) {
 }
 
 Polygon.prototype = Object.create(Shape.prototype);
-Polygon.prototype.constructor = Polygon
+Polygon.prototype.constructor = Polygon;
 Polygon.prototype.perimeter = function() {
   var p = 0;
   for(var i=0;i< this.sides.length; i++) {
@@ -58,34 +58,34 @@ function Triangle(sideOneLength, sideTwoLength, sideThreeLength) {
   Polygon.call(this, [new Side(sideOneLength), new Side(sideTwoLength), new Side(sideThreeLength)])
 }
 
- Triangle.prototype = Object.create(Polygon.prototype);
- Triangle.prototype.constructor = Triangle;
- 
- function Quadrilateral(sideOneLength, sideTwoLength, sideThreeLength, sideFourLength) {
+Triangle.prototype = Object.create(Polygon.prototype);
+Triangle.prototype.constructor = Triangle;
+
+function Quadrilateral(sideOneLength, sideTwoLength, sideThreeLength, sideFourLength) {
   Polygon.call(this, [new Side(sideOneLength), new Side(sideTwoLength), new Side(sideThreeLength), new Side(sideFourLength)]);
 }
 
- Quadrilateral.prototype = Object.create(Polygon.prototype);
- Quadrilateral.prototype.constructor = Quadrilateral;
- 
- function Rectangle(width, height) {
-   Quadrilateral.call(this, width, height, width, height);
-   this.width = width;
-   this.height = height;
- }
- Rectangle.prototype = Object.create(Quadrilateral.prototype);
- Rectangle.prototype.constructor = Rectangle;
- Rectangle.prototype.area = function() {
-   return this.width * this.height;
- }
- 
+Quadrilateral.prototype = Object.create(Polygon.prototype);
+Quadrilateral.prototype.constructor = Quadrilateral;
+
+function Rectangle(width, height) {
+  Quadrilateral.call(this, width, height, width, height);
+  this.width = width;
+  this.height = height;
+}
+Rectangle.prototype = Object.create(Quadrilateral.prototype);
+Rectangle.prototype.constructor = Rectangle
+Rectangle.prototype.area = function() {
+  return this.width * this.height;
+}
+
 function Square(length) {
-  Rectangle.call(this, length, length);
+  Rectangle.call(this, length, length)
   this.length = length;
 }
 
 Square.prototype = Object.create(Rectangle.prototype);
-Square.prototype.constructor = Square;
+Square.prototype.constructor = Square
 
 Square.prototype.listProperties = function() {
   var props = "";
