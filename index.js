@@ -65,8 +65,8 @@ function Triangle(sideOneLength, sideTwoLength, sideThreeLength) {
   Polygon.call(this, [new Side(sideOneLength), new Side(sideTwoLength), new Side(sideThreeLength), new Side(sideFourlength)]);
 }
 
- Triangle.prototype = Object.create(Polygon.prototype);
- Triangle.prototype.constructor = Triangle;
+ Quadrilateral.prototype = Object.create(Polygon.prototype);
+ Quadrilateral.prototype.constructor = Quadrilateral;
 
 
 
