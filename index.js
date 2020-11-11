@@ -90,8 +90,11 @@ Square.prototype.constructor = Square;
 Square.prototype.listProperties = function() {
   var props = "";
   for (var prop in this) {
-    if(this.hasOwn)
+    if(this.hasOwnProperty(prop)) {
+      props += "this." + prop + " = " + this[prop] + "\n";
+    }
   }
+  return(props);
 }
 
 
