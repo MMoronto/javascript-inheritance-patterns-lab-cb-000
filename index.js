@@ -79,7 +79,7 @@ function Triangle(sideOneLength, sideTwoLength, sideThreeLength) {
    return this.width * this.height;
  }
  
- function 
+
 
 
 
