@@ -36,4 +36,21 @@ Circle.prototype.circumference = function() {
   return(2 * Math.PI * this.radius);
 }
 
+function Polygon(sides) {
+  Shape.call(this);
+  this.sides = sides;
+}
+
+Polygon.prototype = Object.create(Shape.prototype);
+Polygon.prototype.constructor = Polygon
+Polygon.prototype.perimeter = function() {
+  var p = 0;
+  for(var i=0;i< this.sides.length; i++) {
+    p += this.sides[i].length;
+  }
+  return(p);
+}
+Polygon.prototype.numberOfSides = function() {
+  return(this.sides.length);
+}
 
