@@ -54,7 +54,8 @@ Polygon.prototype.numberOfSides = function() {
   return(this.sides.length);
 }
 
-function Triangle0eTwoLength), new Side(sideThreeLength)])
+function Triangle
+  0eTwoLength), new Side(sideThreeLength)])
 }
  Triangle.prototype = Object.create(Polygon.prototype);
  Triangle.prototype.constructor = Triangle;
